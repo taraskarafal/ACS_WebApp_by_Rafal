@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <head>
-    <title>ACS Client</title>
-  </head>
-  <body style="background-color:powderblue;"> 
-    
-    <h1 style="margin-left:10%; margin-top: 10%;"> Calling App</h1>
-    <input 
-      id="callee-phone-input"
-      type="text"
-      placeholder="Put E164 PSTN number"
-      style="margin-bottom:3%; margin-left: 10%; width: 230px;"
-    />
-    <div>  
-      <button id="call-phone-button" type="button">
-        Start Call <i class="fa fa-phone" style=color:red></i>
-      </button>
-      &nbsp;
-      <button id="hang-up-phone-button" type="button" disabled="true">
-        Hang Up 
-      </button>
-      <button id="mute-phone-button" type="button" disabled="true">
-        Mute <i class="fa fa-microphone-slash"></i>
-      </button>   
-      <button id="unmute-phone-button" type="button" disabled="true">
-        Unmute <i class="fa fa-microphone"></i>
-      </button>    
-      <button id="hold-phone-button" type="button" disabled="true">
-        Hold
-      </button> 
-      <button id="resume-phone-button" type="button" disabled="true">
-        Resume
-      </button> 
-      <button id="addParticipant-phone-button" type="button" disabled="true">
-        Add Participant
-      </button> 
-    </div>
-    
-    <script src="./bundle.js"></script>
-  </body>
+        <head>
+            <body class="dark-theme "></body>
+            <title>ACS Client</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="./app.css">
+            <script src="./client.js" defer></script>            
+        </head>
+        
+        <body> 
+            
+            <h1> ACS_WebApp</h1>
+            <input 
+                id="callee-phone-input"
+                type="text"
+                placeholder="Put E164 PSTN number"
+                
+            />
+            <div> 
+
+                <button id="call-phone-button" type="button">
+                    Start Call 
+                </button>
+
+                &nbsp;
+                <button id="hang-up-phone-button" type="button" disabled="true">
+                    Hang Up 
+                </button>
+
+                <button id="mute-phone-button" type="button" disabled="true">
+                    Mute 
+                </button>
+
+                <button id="unmute-phone-button" type="button" disabled="true">
+                    Unmute 
+                </button> 
+
+                <button id="hold-phone-button" type="button" disabled="true">
+                    Hold
+                </button> 
+
+                <button id="resume-phone-button" type="button" disabled="true">
+                    Resume
+                </button> 
+
+                <button id="addParticipant-phone-button" type="button" disabled="true">
+                    Add Participant
+                </button> 
+            </div>
+
+            <script src="./bundle.js"></script>
+        </body>
 </html>

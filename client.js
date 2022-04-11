@@ -20,19 +20,19 @@ async function init() {
 }
 init();
 callPhoneButton.addEventListener("click", () => {
-  // start a call to phone
-  const phoneToCall = calleePhoneInput.value;
-  call = callAgent.startCall(
-    [{phoneNumber: phoneToCall}], { alternateCallerId: {phoneNumber: '+48123123123'}
-  });
-  // toggle button states
-  hangUpPhoneButton.disabled = false;
-  callPhoneButton.disabled = true;
-  mutePhoneButton.disabled = false;
-  unmutePhoneButton.disabled = true;
-  holdPhoneButton.disabled = false;
-  resumePhoneButton.disabled = true;
-  addParticipantButton.disabled = false;
+// start a call to phone
+const phoneToCall = calleePhoneInput.value;
+call = callAgent.startCall(
+[{phoneNumber: phoneToCall}], { alternateCallerId: {phoneNumber: '+48123123123'}
+});
+ // toggle button states
+    hangUpPhoneButton.disabled = false;
+    callPhoneButton.disabled = true;
+    mutePhoneButton.disabled = false;
+    unmutePhoneButton.disabled = true;
+    holdPhoneButton.disabled = false;
+    resumePhoneButton.disabled = true;
+    addParticipantButton.disabled = false;
 });
 /*
 //Add participant
@@ -50,49 +50,49 @@ addParticipantButton.addEventListener("click", () => {
 });
 */
 hangUpPhoneButton.addEventListener("click", () => {
-  // end the current call
-  call.hangUp({
-    forEveryone: true
-  });
-  // toggle button states
-  hangUpPhoneButton.disabled = true;
-  callPhoneButton.disabled = false;
+// end the current call
+call.hangUp({
+    forEveryone: true
+     });
+// toggle button states
+    hangUpPhoneButton.disabled = true;
+    callPhoneButton.disabled = false;
 });
 
 //------------MUTE ----------------------------------------------------------
 mutePhoneButton.addEventListener("click", () => {
-  callAgent = call.mute();
-  
-  // Zarządzaj przyciskami 
-  hangUpPhoneButton.disabled = false;  // Po kliknięciu przycisku "mute", przycisk "hangUP" będzie aktywny
-  callPhoneButton.disabled = true;
-  mutePhoneButton.disabled = true;
-  unmutePhoneButton.disabled = false;
+    callAgent = call.mute();
+ 
+// Zarządzaj przyciskami 
+    hangUpPhoneButton.disabled = false;  // Po kliknięciu przycisku "mute", przycisk "hangUP" będzie aktywny
+    callPhoneButton.disabled = true;
+    mutePhoneButton.disabled = true;
+    unmutePhoneButton.disabled = false;
 });
 //------------UNMUTE ----------------------------------------------------------
 unmutePhoneButton.addEventListener("click", () => {
-  callAgent = call.unmute();
-  
-  // Zarządzaj przyciskami 
-  hangUpPhoneButton.disabled = false;  // Po kliknięciu przycisku "mute", przycisk "hangUP" będzie aktywny
-  callPhoneButton.disabled = true;
-  mutePhoneButton.disabled = false;
-  unmutePhoneButton.disabled = true;
+callAgent = call.unmute();
+
+// Zarządzaj przyciskami 
+    hangUpPhoneButton.disabled = false;  // Po kliknięciu przycisku "mute", przycisk "hangUP" będzie aktywny
+    callPhoneButton.disabled = true;
+    mutePhoneButton.disabled = false;
+    unmutePhoneButton.disabled = true;
 })
 holdPhoneButton.addEventListener("click", () => {
-  callAgent = call.hold();
-  // Zarządzaj przyciskami 
-  hangUpPhoneButton.disabled = false;  
-  callPhoneButton.disabled = true;
-  holdPhoneButton.disabled = true;
-  resumePhoneButton.disabled = false;
-})
+callAgent = call.hold();
+// Zarządzaj przyciskami 
+    hangUpPhoneButton.disabled = false;  
+    callPhoneButton.disabled = true;
+    holdPhoneButton.disabled = true;
+    resumePhoneButton.disabled = false;
+    })
 
 resumePhoneButton.addEventListener("click", () => {
-  callAgent = call.resume();
-  // Zarządzaj przyciskami 
-  hangUpPhoneButton.disabled = false;  
-  callPhoneButton.disabled = true;
-  holdPhoneButton.disabled = false;
-  resumePhoneButton.disabled = true;
+callAgent = call.resume();
+ // Zarządzaj przyciskami 
+    hangUpPhoneButton.disabled = false;  
+    callPhoneButton.disabled = true;
+    holdPhoneButton.disabled = false;
+    resumePhoneButton.disabled = true;
 })
